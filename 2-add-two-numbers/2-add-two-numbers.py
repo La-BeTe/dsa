@@ -3,27 +3,6 @@ class ListNode:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
-        
-def convert_list_node_to_num(list_node):
-    result = 0
-    power_of_10 = 0
-    while True:
-        result = (list_node.val * (10 ** power_of_10)) + result
-        power_of_10 += 1
-        list_node = list_node.next
-        if not list_node:
-            break
-    return result
-
-def convert_num_to_list_node(num):
-    print(str(num)[-1])
-    if num == 0:
-        return ListNode(0, None)
-    num = int(num)
-    return ListNode(num % 10, convert_num_to_list_node(num / 10)) if num >= 1 else None
-    
-            
-    
     
 class Solution:
     CARRY = 0
