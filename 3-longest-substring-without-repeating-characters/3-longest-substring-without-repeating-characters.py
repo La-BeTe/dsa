@@ -1,21 +1,14 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
+        # example_string = "abcadef"
+        charSet = set()
         left = 0
-        right = 0
-        longest_substr_length = 0
-        hash_map = {}
-        while left < len(s):
-            if right >= len(s):
-                longest_substr_length = max(longest_substr_length, right - left)
-                break
-            char = s[right]
-            if char not in hash_map:
-                hash_map[char] = right
-                right += 1
-            else:
-                longest_substr_length = max(longest_substr_length, right - left)
-                left = hash_map[char] + 1
-                right = left
-                hash_map = {}
-        return longest_substr_length
+        result = 0
+        for right in range(len(s)):
+            while s[right] in charSet:
+                charSet.remove(s[left])
+                left += 1
+            charSet.add(s[right])
+            result = max(result, right - left + 1)
+        return result
             
