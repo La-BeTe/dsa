@@ -13,10 +13,10 @@ class Solution:
             end += 1
             can_move_start = False
             should_break = False
-            if s[start] in hash_map and ((hash_map[s[start]][-1] - hash_map[s[start]][0]) < longest_palindrome_len):
-                del hash_map[s[start]]
+            if s[start] not in hash_map or (len(hash_map[s[start]]) + hash_map_ptr) < 0:
                 can_move_start = True
-            elif s[start] not in hash_map or (len(hash_map[s[start]]) + hash_map_ptr) < 0:
+            elif s[start] in hash_map and ((hash_map[s[start]][-1] - hash_map[s[start]][0]) < longest_palindrome_len):
+                del hash_map[s[start]]
                 can_move_start = True
             else:
                 sliced_s = s[start:end]
