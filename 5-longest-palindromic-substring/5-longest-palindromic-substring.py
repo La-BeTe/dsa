@@ -5,6 +5,8 @@ class Solution:
         longest_palindrome = ''
         longest_palindrome_len = 0
         while start < s_len:
+            if longest_palindrome_len > (s_len - start):
+                break
             if s[start] != s[end-1]:
                 end -= 1
                 continue
