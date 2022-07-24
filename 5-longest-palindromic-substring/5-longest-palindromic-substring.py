@@ -3,7 +3,7 @@ class Solution:
         start, end = 0, len(s)
         longest_palindrome = ''
         while start < len(s):
-            if s[start] != s[end - 1]:
+            if s[start] != s[end-1]:
                 end -= 1
                 continue
             if (end - start) < len(longest_palindrome):
