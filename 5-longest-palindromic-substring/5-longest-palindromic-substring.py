@@ -7,12 +7,12 @@ class Solution:
         while start < s_len:
             if longest_palindrome_len > (s_len - start):
                 break
-            if s[start] != s[end-1]:
-                end -= 1
-                continue
-            if (end - start) < longest_palindrome_len:
+            if longest_palindrome_len > (end - start):
                 start += 1
                 end = s_len
+                continue
+            if s[start] != s[end-1]:
+                end -= 1
                 continue
             sliced_s = s[start:end]
             reversed_s = sliced_s[::-1]
