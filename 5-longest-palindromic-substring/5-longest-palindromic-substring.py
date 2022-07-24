@@ -5,14 +5,14 @@ class Solution:
         longest_palindrome = ''
         longest_palindrome_len = 0
         while start < s_len:
+            if s[start] != s[end-1]:
+                end -= 1
+                continue
             if longest_palindrome_len > (s_len - start):
                 break
             if longest_palindrome_len > (end - start):
                 start += 1
                 end = s_len
-                continue
-            if s[start] != s[end-1]:
-                end -= 1
                 continue
             sliced_s = s[start:end]
             reversed_s = sliced_s[::-1]
