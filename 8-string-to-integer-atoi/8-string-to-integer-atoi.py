@@ -12,15 +12,13 @@ class Solution:
                 elif char == '+':
                     sign = 1
                 else:
-                    sign = 1  
-                    is_num = ord(char) >= 48 and ord(char) <= 57
-                    if is_num:
+                    sign = 1
+                    if 47 < ord(char) < 58:
                         num += int(char)
                     else:
                         break
-            else:    
-                is_num = ord(char) >= 48 and ord(char) <= 57
-                if is_num:
+            else:
+                if 47 < ord(char) < 58:
                     num = (num * 10) + int(char)
                 else:
                     break
