@@ -7,8 +7,5 @@ class Solution:
             r = x % 10
             result = (result * 10) + r
             x = x // 10
-        limit = 2 ** 31
-        if result < -limit or result > limit - 1:
-            return 0
-        return result * is_negative
+        return result * is_negative if result < 2 ** 31 else 0
         
