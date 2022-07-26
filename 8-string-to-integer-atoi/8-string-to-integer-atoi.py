@@ -13,12 +13,12 @@ class Solution:
                     sign = 1
                 else:
                     sign = 1
-                    if 47 < ord(char) < 58:
+                    if (47 < ord(char) < 58):
                         num += int(char)
                     else:
                         break
             else:
-                if 47 < ord(char) < 58:
+                if (47 < ord(char) < 58):
                     num = (num * 10) + int(char)
                 else:
                     break
