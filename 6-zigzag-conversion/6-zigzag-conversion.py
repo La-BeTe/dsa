@@ -1,6 +1,6 @@
 class Solution:
     def convert(self, s: str, numRows: int) -> str:
-        li = ['' for _ in range(numRows)]
+        li = [''] * numRows
         ptr = 0
         is_going_backwards = False
         for i, char in enumerate(s):
