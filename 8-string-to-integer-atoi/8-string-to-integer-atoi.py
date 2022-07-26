@@ -1,7 +1,7 @@
 class Solution:
     def myAtoi(self, s: str) -> int:
-        limit = (2 ** 31) - 1
         sign = num = 0
+        limit = (2 ** 31) - 1
         for char in s:
             if sign == 0:
                 if char == ' ':
