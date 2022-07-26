@@ -21,5 +21,5 @@ class Solution:
                     num = (num * 10) + int(char)
                 else:
                     break
-        limit = 2 ** 31 if sign < 0 else (2 ** 31) - 1
+        limit = 2 ** 31 if sign < 0 else ((2 ** 31) - 1)
         return min(limit, num) * sign
