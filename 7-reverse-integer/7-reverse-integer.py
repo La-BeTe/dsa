@@ -4,10 +4,9 @@ class Solution:
             return x
         result = 0
         abs_x = abs(x)
-        limit = 2 ** 31
         while abs_x >= 1:
             result = (result * 10) + (abs_x % 10)
-            if result > limit:
+            if result > 2 ** 31:
                 return 0
             abs_x = abs_x // 10
         return result * x // abs(x)
