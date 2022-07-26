@@ -13,7 +13,5 @@ class Solution:
             if ptr == -1:
                 ptr = 1 if numRows > 1 else 0
                 is_going_backwards = False
-        result = ''
-        for row in li:
-            result += ''.join(row)
+        result = ''.join(''.join(row) for row in li)
         return result
