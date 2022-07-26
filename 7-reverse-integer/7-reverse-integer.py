@@ -1,7 +1,9 @@
 class Solution:
     def reverse(self, x: int) -> int:
+        if x == 0:
+            return x
         result = 0
-        abs_x = abs(x) or 1 # if x is 0, use 1 so we don't get ZeroDivisionError
+        abs_x = abs(x)
         is_negative = x // abs_x
         limit = 2 ** 31
         while abs_x >= 1:
