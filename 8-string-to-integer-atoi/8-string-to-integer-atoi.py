@@ -22,5 +22,4 @@ class Solution:
                     num = (num * 10) + int(char)
                 else:
                     break
-                    
         return min(num, limit) * sign
