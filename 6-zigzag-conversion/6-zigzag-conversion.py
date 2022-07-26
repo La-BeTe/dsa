@@ -4,7 +4,7 @@ class Solution:
             return s
         li = [''] * numRows
         ptr, is_going_backwards = 0, False
-        for i, char in enumerate(s):
+        for char in s:
             li[ptr] += char
             is_going_backwards = is_going_backwards or (ptr == numRows - 1)
             ptr += -1 if is_going_backwards else 1    
