@@ -6,6 +6,6 @@ class Solution:
         ptr, is_going_backwards = 0, False
         for char in s:
             li[ptr] += char
-            is_going_backwards = (is_going_backwards or (ptr == numRows - 1)) and ptr != 0
+            is_going_backwards = ptr != 0 and (is_going_backwards or (ptr == numRows - 1)) 
             ptr += -1 if is_going_backwards else 1  
         return ''.join(li)
