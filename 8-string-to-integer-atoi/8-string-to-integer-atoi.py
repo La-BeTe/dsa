@@ -1,33 +1,25 @@
 class Solution:
     def myAtoi(self, s: str) -> int:
-        sign = None
-        num = '0'
-        num_map = {
-            '0': 1,
-            '1': 1,
-            '2': 1,
-            '3': 1,
-            '4': 1,
-            '5': 1,
-            '6': 1,
-            '7': 1,
-            '8': 1,
-            '9': 1
-        }
+        sign = num = 0
         for char in s:
-            if sign is None:
+            is_num = ord(char) >= 48 and ord(char) <= 57
+            if sign == 0:
                 if char == '-':
                     sign = -1
                 elif char == '+':
                     sign = 1
-                elif char in num_map:
+                elif char == ' ':
+                    continue
+                else:
                     sign = 1
-                    num = char
-                elif char != ' ' and char not in num_map:
+                    if is_num:
+                        num += int(char)
+                    else:
+                        break
+            else:
+                if is_num:
+                    num = (num * 10) + int(char)
+                else:
                     break
-            elif char in num_map:
-                num += char
-            elif char not in num_map:
-                break
-        limit = 2 ** 31 if sign and sign < 0 else (2 ** 31) - 1
-        return min(limit, int(num)) * (sign or 1)
+        limit = 2 ** 31 if sign < 0 else (2 ** 31) - 1
+        return min(limit, num) * sign
