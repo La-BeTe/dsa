@@ -1,11 +1,13 @@
 class Solution:
     def myAtoi(self, s: str) -> int:
         sign = num = 0
+        limit = (2 ** 31) - 1
         for char in s:
             is_num = ord(char) >= 48 and ord(char) <= 57
             if sign == 0:
                 if char == '-':
                     sign = -1
+                    limit = 2 ** 31
                 elif char == '+':
                     sign = 1
                 elif char == ' ':
@@ -21,5 +23,4 @@ class Solution:
                     num = (num * 10) + int(char)
                 else:
                     break
-        limit = 2 ** 31 if sign < 0 else ((2 ** 31) - 1)
         return min(limit, num) * sign
