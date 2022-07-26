@@ -13,5 +13,4 @@ class Solution:
             if ptr == -1:
                 ptr = 1 if numRows > 1 else 0
                 is_going_backwards = False
-        result = ''.join(''.join(row) for row in li)
-        return result
+        return ''.join(''.join(_) for _ in li)
