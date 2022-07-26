@@ -1,10 +1,10 @@
 class Solution:
     def convert(self, s: str, numRows: int) -> str:
-        li = [[] for _ in range(numRows)]
+        li = ['' for _ in range(numRows)]
         ptr = 0
         is_going_backwards = False
         for i, char in enumerate(s):
-            li[ptr].append(char)
+            li[ptr] += char
             if (i == numRows) or (ptr == numRows - 1) or is_going_backwards:
                 ptr -= 1
                 is_going_backwards = True
@@ -13,4 +13,4 @@ class Solution:
             if ptr == -1:
                 ptr = 1 if numRows > 1 else 0
                 is_going_backwards = False
-        return ''.join(''.join(_) for _ in li)
+        return ''.join(li)
