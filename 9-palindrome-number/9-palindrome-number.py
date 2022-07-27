@@ -4,8 +4,8 @@ class Solution:
             return False
         elif x < 10:
             return True
-        old_x, reversed_x = x, 0
-        while x >= 1:
-            reversed_x = (reversed_x * 10) + (x % 10)
-            x //= 10
-        return old_x == reversed_x
+        actual_x, reversed_x = x, 0
+        while actual_x >= 1:
+            reversed_x = (reversed_x * 10) + (actual_x % 10)
+            actual_x //= 10
+        return x == reversed_x
