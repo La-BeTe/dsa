@@ -2,11 +2,9 @@ class Solution:
     def isPalindrome(self, x: int) -> bool:
         if x < 0:
             return False
-        s = str(x)
-        left, right = 0, len(s) - 1
-        while left <= right:
-            if s[left] != s[right]:
-                return False
-            left += 1
-            right -= 1
-        return True
+        old_x = x
+        reversed_x = 0
+        while x >= 1:
+            reversed_x = (reversed_x * 10) + (x % 10)
+            x //= 10
+        return old_x == reversed_x
