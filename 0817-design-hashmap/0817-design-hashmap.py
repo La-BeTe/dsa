@@ -1,25 +1,22 @@
 class MyHashMap:
 
     def __init__(self):
-        self.list_length = 1000000
-        self.list = [None] * (self.list_length + 1)
+        self.dict = {}
         
 
     def put(self, key: int, value: int) -> None:
-        self.list[key] = value
+        self.dict[key] = value
         
 
     def get(self, key: int) -> int:
-        if key > self.list_length:
+        if key not in self.dict:
             return -1
-        if self.list[key] is None:
-            return -1
-        return self.list[key]
+        return self.dict[key] if self.dict[key] is not None else -1
 
         
 
     def remove(self, key: int) -> None:
-        self.list[key] = None
+        self.dict[key] = None
         
 
 
