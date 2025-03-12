@@ -1,10 +1,13 @@
 class Solution:
     def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
-        total_list_size = len(nums1) + len(nums2)
-        index_to_end_at = int(math.floor(total_list_size / 2) if total_list_size % 2 != 0 else total_list_size / 2)
+        nums1_length = len(nums1)
+        nums2_length = len(nums2)
+        total_list_size = nums1_length + nums2_length
+        total_list_size_is_odd = total_list_size % 2 != 0
+        index_to_end_at = int(math.floor(total_list_size / 2) if total_list_size_is_odd else total_list_size / 2)
         i, j, k = 0, 0, 0
-        longer_list = nums1 if len(nums1) >= len(nums2) else nums2
-        shorter_list = nums1 if len(nums1) < len(nums2) else nums2
+        longer_list = nums1 if nums1_length >= nums2_length else nums2
+        shorter_list = nums1 if nums1_length < nums2_length else nums2
         li = []
 
         while k <= index_to_end_at:
@@ -22,15 +25,12 @@ class Solution:
                 num = shorter_list[j]
                 j = j + 1
 
-            print(index_to_end_at, k, li)
-            if total_list_size % 2 != 0 and k == index_to_end_at:
+            if total_list_size_is_odd and k == index_to_end_at:
                 li.append(num)
-            if total_list_size % 2 == 0 and k >= index_to_end_at - 1:
+            if not total_list_size_is_odd and k >= index_to_end_at - 1:
                 li.append(num)
 
             k = k + 1
-
-        print(index_to_end_at, li)
             
         return li[-1] if len(li) == 1 else (li[-1] + li[-2]) / 2
         
