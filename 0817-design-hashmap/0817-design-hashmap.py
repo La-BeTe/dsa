@@ -1,7 +1,8 @@
 class MyHashMap:
 
     def __init__(self):
-        self.list = [None] * 1000001
+        self.list_length = 1000000
+        self.list = [None] * (self.list_length + 1)
         
 
     def put(self, key: int, value: int) -> None:
@@ -9,7 +10,7 @@ class MyHashMap:
         
 
     def get(self, key: int) -> int:
-        if key > len(self.list):
+        if key > self.list_length:
             return -1
         if self.list[key] is None:
             return -1
