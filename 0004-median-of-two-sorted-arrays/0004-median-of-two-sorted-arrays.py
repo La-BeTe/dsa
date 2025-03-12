@@ -5,17 +5,25 @@ class Solution:
         total_list_size = nums1_length + nums2_length
         total_list_size_is_odd = total_list_size % 2 != 0
         index_to_end_at = int(math.floor(total_list_size / 2) if total_list_size_is_odd else total_list_size / 2)
-        i, j, k = 0, 0, 0
-        longer_list = nums1 if nums1_length >= nums2_length else nums2
-        shorter_list = nums1 if nums1_length < nums2_length else nums2
-        li = []
+        
+        i, j, k, li, longer_list, shorter_list, longer_list_length, shorter_list_length = 0, 0, 0, [], [], [], 0, 0
+        if nums1_length >= nums2_length:
+            longer_list = nums1
+            shorter_list = nums2
+            longer_list_length = nums1_length
+            shorter_list_length = nums2_length
+        else:
+            longer_list = nums2
+            shorter_list = nums1
+            longer_list_length = nums2_length
+            shorter_list_length = nums1_length
 
         while k <= index_to_end_at:
             num = 0
-            if i >= len(longer_list):
+            if i >= longer_list_length:
                 num = shorter_list[j]
                 j = j + 1
-            elif j >= len(shorter_list):
+            elif j >= shorter_list_length:
                 num = longer_list[i]
                 i = i + 1
             elif longer_list[i] <= shorter_list[j]:
