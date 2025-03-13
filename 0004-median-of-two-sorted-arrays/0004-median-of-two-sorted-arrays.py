@@ -6,7 +6,7 @@ class Solution:
         total_list_size_is_odd = total_list_size % 2 != 0
         index_to_end_at = int(math.floor(total_list_size / 2) if total_list_size_is_odd else total_list_size / 2)
         
-        i, j, k, li, longer_list, shorter_list, longer_list_length, shorter_list_length = 0, 0, 0, [], [], [], 0, 0
+        i, j, k, longer_list, shorter_list, longer_list_length, shorter_list_length, median_sum = 0, 0, 0, [], [], 0, 0, 0
         if nums1_length >= nums2_length:
             longer_list = nums1
             shorter_list = nums2
@@ -34,11 +34,11 @@ class Solution:
                 j = j + 1
 
             if total_list_size_is_odd and k == index_to_end_at:
-                li.append(num)
+                return num
             if not total_list_size_is_odd and k >= index_to_end_at - 1:
-                li.append(num)
+                median_sum += num
 
             k = k + 1
             
-        return li[-1] if len(li) == 1 else (li[-1] + li[-2]) / 2
+        return median_sum / 2
         
