@@ -2,9 +2,8 @@ class Solution:
     def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
         nums1_length = len(nums1)
         nums2_length = len(nums2)
-        total_list_size = nums1_length + nums2_length
-        total_list_size_is_odd = total_list_size % 2 != 0
-        index_to_end_at = int(math.floor(total_list_size / 2) if total_list_size_is_odd else total_list_size / 2)
+        total_list_size_is_odd = (nums1_length + nums2_length) % 2 != 0
+        index_to_end_at = int(math.floor((nums1_length + nums2_length) / 2) if total_list_size_is_odd else (nums1_length + nums2_length) / 2)
         
         i, j, k, longer_list, shorter_list, longer_list_length, shorter_list_length, median_sum = 0, 0, 0, [], [], 0, 0, 0
         if nums1_length >= nums2_length:
