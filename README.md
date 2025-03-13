@@ -7,6 +7,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0004-median-of-two-sorted-arrays](https://github.com/La-BeTe/dsa/tree/master/0004-median-of-two-sorted-arrays) |
+| [0011-container-with-most-water](https://github.com/La-BeTe/dsa/tree/master/0011-container-with-most-water) |
 | [0817-design-hashmap](https://github.com/La-BeTe/dsa/tree/master/0817-design-hashmap) |
 ## Hash Table
 |  |
@@ -32,4 +33,12 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 |  |
 | ------- |
 | [0004-median-of-two-sorted-arrays](https://github.com/La-BeTe/dsa/tree/master/0004-median-of-two-sorted-arrays) |
+## Two Pointers
+|  |
+| ------- |
+| [0011-container-with-most-water](https://github.com/La-BeTe/dsa/tree/master/0011-container-with-most-water) |
+## Greedy
+|  |
+| ------- |
+| [0011-container-with-most-water](https://github.com/La-BeTe/dsa/tree/master/0011-container-with-most-water) |
 <!---LeetCode Topics End-->
