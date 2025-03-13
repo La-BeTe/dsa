@@ -1,13 +1,15 @@
 class Solution:
     def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
-        if len(nums1) < len(nums2):
-            [nums1, nums2] = [nums2, nums1]
         nums1_length = len(nums1)
         nums2_length = len(nums2)
+        if nums1_length < nums2_length:
+            [nums1, nums2] = [nums2, nums1]
+            [nums1_length, nums2_length] = [nums2_length, nums1_length]
+
         total_list_size_is_odd = (nums1_length + nums2_length) % 2 != 0
-        index_to_end_at = int(math.floor((nums1_length + nums2_length) / 2) if total_list_size_is_odd else (nums1_length + nums2_length) / 2)
-        
+        index_to_end_at = int((nums1_length + nums2_length) / 2)
         i, j, k, median_sum = 0, 0, 0, 0
+        
 
         while k <= index_to_end_at:
             num = 0
