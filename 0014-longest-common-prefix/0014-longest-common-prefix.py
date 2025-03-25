@@ -11,12 +11,12 @@ class Solution:
             while i < str_len and i < res_len and str[i] == res[i]:
                 i += 1
                 new_res_index = i
+            
+            if new_res_index == 0:
+                return ""
                 
             if res_index is None or new_res_index < res_index:
                 res_index = new_res_index
-            
-            if res_index == 0:
-                return ""
 
         return res[:res_index]
         
