@@ -8,6 +8,14 @@ class Solution:
             i = 0
             str_len = len(str)
 
+            if str[:res_index] == res[:res_index]:
+                continue
+            
+            if res[:str_len] == str:
+                if str_len < res_index:
+                    res_index = str_len
+                continue
+
             while i < str_len and i < res_len and str[i] == res[i]:
                 i += 1
             
