@@ -8,6 +8,9 @@ class Solution:
             str_len = len(str)
             i, new_res_index = 0, 0
 
+            if str_len > res_len and str[:res_index] == res[:res_index]:
+                continue
+
             while i < str_len and i < res_len and str[i] == res[i]:
                 i += 1
                 new_res_index = i
